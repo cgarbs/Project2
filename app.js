@@ -19,17 +19,6 @@ app.use(bindProToLocals);
 const bindClientToLocals = require("./configs/client-locals.config");
 app.use(bindClientToLocals);
 
-// MongoDB Atlas
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://cgarbs:1Pass2word3@cluster0.alzxs.mongodb.net/module2project?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-
 // Middleware Setup
 app.use(logger('dev'));
 app.use(express.json());
