@@ -1,0 +1,36 @@
+<h1>Make an Inquiry</h1>
+
+<form action="/create-inquiry" method="POST">
+
+  <label>
+    Your Full Name:
+    <input type="text" name="fullName" />
+  </label>
+
+  <label>
+    I need a:
+    <select name="category">
+      <option value="">Choose one...</option>
+      {{#each jobsFromDB}}
+        <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+
+  <label>
+    When:
+    <input type="date" name="when" />
+  </label>
+
+  <label>
+    Where:
+    <input type="text" name="where" />
+  </label>
+
+  <label>
+    Describe your event:
+  <input type="text" name="description" />
+</label>
+
+<button type="submit">Send Inquiry</button>
+
+</form>

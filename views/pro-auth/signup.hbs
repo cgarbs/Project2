@@ -1,0 +1,46 @@
+<h2>Pro Sign up</h2>
+
+<a href="/">Home</a>
+
+<br><br>
+<div class="auth-forms">
+  <form action="/pro-signup" method="POST">
+
+      <label> Username:
+          <input type="text" name="username">
+      </label>
+
+      <label> First Name:
+          <input type="text" name="firstName">
+      </label>
+
+      <label> Last Name:
+          <input type="text" name="lastName">
+      </label>
+
+      <label> Email:
+          <input type="email" name="email">
+      </label>
+
+      <label> Password:
+          <input type="password" name="userPassword">
+      </label>
+
+    <label>
+      Occupation
+      <select name="occupation">
+        <option value="">Choose one...</option>
+        {{#each jobsFromDB}}
+          <option value="{{id}}">{{name}}</option>
+        {{/each}}
+      </select>
+
+      <button type="submit">Sign up</button>
+
+      <br />
+      {{#if errorMessage}}
+          {{errorMessage}}
+      {{/if}}
+
+  </form>
+</div>

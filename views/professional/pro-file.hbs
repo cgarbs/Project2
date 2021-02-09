@@ -1,0 +1,12 @@
+<h3>{{proInSession.username}}'s profile</h3>
+<br>
+<h3>Name: {{proInSession.firstName}} {{proInSession.lastName}}</h3>
+<h3>Email: {{proInSession.email}}</h3>
+<h3>Occupation: 
+  {{#each profileFromDB.occupation}}
+    {{name}}
+  {{/each}}
+</h3>
+
+
+

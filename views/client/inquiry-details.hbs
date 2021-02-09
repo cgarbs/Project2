@@ -1,0 +1,24 @@
+<h3>Requesting: 
+    {{#each inquiryFromDB.category}}
+        {{name}}
+    {{/each}}
+</h3>
+
+<h3>When: {{inquiryFromDB.when}}</h3>
+
+<h3>Where: {{inquiryFromDB.where}}</h3>
+
+<h3>Description: {{inquiryFromDB.description}}</h3>
+
+<br>
+
+<button><a href="/inquiry/{{inquiryFromDB.id}}/edit">Edit Inquiry</a></button>
+
+<br><br><br>
+
+<form action="/inquiry/{{inquiryFromDB.id}}/delete" method="POST">
+   <button type="submit">Delete Inquiry</button>
+</form>
+
+<br><br><br>
+<a href="/my-inquiries">Back</a>

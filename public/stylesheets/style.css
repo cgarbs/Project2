@@ -1,0 +1,78 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+  max-width: 100%;
+  max-height: 100%;
+  background-color: gray;
+  background-size: cover;
+  background-image: url("/images/indeximg3.jpg");
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* INDEX */
+#account-options {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#client-account {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#client-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+#pro-account {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+#pro-options {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SIGNUP/LOGIN ROUTES */
+.auth-forms form {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.auth-forms form button {
+  width: 65px;
+}
+
+
+.dashboard {
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#landing {
+  width: 1200px;
+  height: 1000px;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 20px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    
+    <nav>
+
+      {{#if clientInSession}}
+        <h3>Welcome, {{clientInSession.firstName}}</h3>
+        <a href="/my-profile">My Profile</a>
+        <a href="/my-inquiries">My Inquiries</a>
+        <a href="/inquire">Make an Inquiry</a>
+
+        <form action="/logout" method="POST">
+          <button type="submit">Logout</button>
+        </form>
+      {{/if}}
+
+      {{#if proInSession}}
+        <h3>Welcome, {{proInSession.firstName}}</h3>
+        <a href="/my-pro-file">My Profile</a>
+        <a href="/dashboard">Dashboard</a>
+
+        <form action="/logout" method="POST">
+          <button type="submit">Logout</button>
+        </form>
+      {{/if}}
+
+    </nav>
+
+    <div class="container">
+      {{{body}}}
+    </div>
+
+
+
+
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+
+</html>

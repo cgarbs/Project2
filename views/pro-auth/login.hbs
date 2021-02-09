@@ -1,0 +1,22 @@
+<h2>Pro Login</h2>
+<a href="/">Home</a>
+
+<br><br>
+<div class="auth-forms">
+<form action="/pro-login" method="POST">
+
+    <label> Email:
+        <input type="email" name="email">
+    </label>
+    <label> Password:
+        <input type="password" name="userPassword">
+    </label>
+
+    <button type="submit">Login</button>
+
+    <br />
+    {{#if errorMessage}}
+        {{errorMessage}}
+    {{/if}}
+</form>
+</div>

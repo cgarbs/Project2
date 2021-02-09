@@ -1,0 +1,37 @@
+<h2>Client Sign up</h2>
+
+<a href="/">Home</a>
+
+<br><br>
+<div class="auth-forms">
+<form action="/client-signup" method="POST">
+
+    <label> Username:
+        <input type="text" name="username">
+    </label>
+
+        <label> First Name:
+        <input type="text" name="firstName">
+    </label>
+
+        <label> Last Name:
+        <input type="text" name="lastName">
+    </label>
+
+    <label> Email:
+        <input type="email" name="email">
+    </label>
+
+    <label> Password:
+        <input type="password" name="userPassword">
+    </label>
+
+    <button type="submit">Sign up</button>
+
+
+    {{#if errorMessage}}
+        {{errorMessage}}
+    {{/if}}
+
+</form>
+</div>
