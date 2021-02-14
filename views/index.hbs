@@ -1,6 +1,7 @@
-<p>Welcome to {{title}}</p>
 <div id="landing">
-    <div id="account-options">
+
+  <h2>Connecting clients to services and professionals to work.</h2>
+
       <div id="client-account">
 
         {{#if clientInSession}}
@@ -14,10 +15,10 @@
 
         {{else}}
           <h3>Are you a client?</h3>
-          <div id="client-options">
-            <a href="/client-signup">Signup</a>
-            <a href="/client-login">Login</a>
-          </div>
+          
+            <button><a href="/client-signup">Signup</a></button>
+            <button><a href="/client-login">Login</a></button>
+          
         {{/if}}
 
       </div>
@@ -33,13 +34,13 @@
           </form>
 
         {{else}}
-          <h3>Or a Pro?</h3>
-          <div id="pro-options">
-              <a href="/pro-signup">Signup</a>
-              <a href="/pro-login">Login</a>
-          </div>
+          <h3>Or are you a Pro?</h3>
+          
+              <button><a href="/pro-signup">Signup</a></button>
+              <button><a href="/pro-login">Login</a></button>
+          
         {{/if}}
 
       </div>
-    </div>
+
 </div>
