@@ -6,7 +6,6 @@ const Inquiry = require('../models/Inquiry.model');
 const Pro = require("../models/Pro.model");
 
 
-
 // Display pro dashboard
 router.get('/dashboard', (req, res, next) => {
   if(!req.session.currentPro) {
@@ -17,6 +16,7 @@ router.get('/dashboard', (req, res, next) => {
     res.render('professional/dashboard.hbs', { profileFromDB }))
     .catch(err => console.log(`Error occurred while rendering dashboard: ${err}.`))
 });
+
 
 // Display pro profile
 router.get('/my-pro-file', (req, res, next) => {
@@ -32,6 +32,7 @@ router.get('/my-pro-file', (req, res, next) => {
     .catch(err => console.log(`Error occurred while rendering profile details: ${err}.`))
 });
 
+
 // Display inquiries
 router.get('/inquiries', (req, res, next) => {
   if(!req.session.currentPro) {
@@ -39,13 +40,31 @@ router.get('/inquiries', (req, res, next) => {
   }
   Inquiry.find()
   .populate('category')
-  .then(inquiriesFromDB =>
-    res.render('professional/inquiries.hbs', { inquiriesFromDB }))
+  .then(inquiriesFromDB => {
+    inquiriesFromDB.forEach(e => {
+      e.category.forEach(i => {
+        if(i._id.equals(req.session.currentPro.occupation[0])) {
+          e.match = true;
+        }
+      })
+    }) 
+    res.render('professional/inquiries.hbs', { inquiriesFromDB })
+  })
     .catch(err => console.log(`Error occurred while rendering inquiries: ${err}.`))
 });
 
 
-
+// Display inquiry details
+router.get('/inquiry/:id/details', (req, res, next) => {
+  if(!req.session.currentPro) {
+    res.redirect('/pro-login')
+  }
+  Inquiry.findById(req.params.id)
+  .populate('category')
+  .then(inquiryFromDB =>
+    res.render('professional/inquiry-details.hbs', { inquiryFromDB }))
+    .catch(err => console.log(`Error occurred while rendering inquiry details: ${err}.`))
+});
 
 
 module.exports = router;

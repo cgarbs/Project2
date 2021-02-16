@@ -3,7 +3,7 @@ const { Schema, model } = mongoose;
 
 const inquirySchema = new Schema(
     {
-        fullName: String,
+        clientName: String,
         category: [{ type: Schema.Types.ObjectId, ref: "Job" }],
         where: String,
         when: String,

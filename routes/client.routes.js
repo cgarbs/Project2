@@ -19,9 +19,9 @@ router.get('/inquire', (req, res, next) => {
 });
 
 router.post('/create-inquiry', (req, res, next) => {
-  const { title, category, who, when, where, description } = req.body;
+  const { clientName, category, when, where, description } = req.body;
   const info = req.body;
-  Inquiry.create({ title, category, who, when, where, description })
+  Inquiry.create({ clientName, category, when, where, description })
   .then(res.render('client/inquiry-sent.hbs', { info }))
   .catch(err => console.log(`Error occurred while creating inquiry: ${err}. `))
 });

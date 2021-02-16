@@ -1,43 +1,42 @@
 <div id="landing">
 
-  <h2>Connecting clients to services and professionals to work.</h2>
-
       <div id="client-account">
 
         {{#if clientInSession}}
           <a href="/my-profile">My Profile</a>
           <a href="/my-inquiries">My Inquiries</a>
           <a href="/inquire">Make an Inquiry</a>
-
+{{!-- 
           <form action="/logout" method="POST">
             <button type="submit">Logout</button>
-          </form>
+          </form> --}}
 
         {{else}}
           <h3>Are you a client?</h3>
           
-            <button><a href="/client-signup">Signup</a></button>
-            <button><a href="/client-login">Login</a></button>
+          <a href="/client-signup">Signup</a>
+          <a href="/client-login">Login</a>
           
         {{/if}}
 
       </div>
+
       <div id="pro-account">
 
         {{#if proInSession}}
           <h3>{{proInSession.username}}</h3>
           <a href="/my-pro-file">My Profile</a>
           <a href="/dashboard">Dashboard</a>
-
+{{!-- 
           <form action="/logout" method="POST">
             <button type="submit">Logout</button>
-          </form>
+          </form> --}}
 
         {{else}}
           <h3>Or are you a Pro?</h3>
           
-              <button><a href="/pro-signup">Signup</a></button>
-              <button><a href="/pro-login">Login</a></button>
+            <a href="/pro-signup">Signup</a>
+            <a href="/pro-login">Login</a>
           
         {{/if}}
 

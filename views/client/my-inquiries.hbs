@@ -1,9 +1,10 @@
+<br><br>
+
 <h1>My Inquiries</h1>
 
 {{#each inquiriesFromDB}}
 
-<br><br><br>
-<h3>{{fullName}}</h3>
+<br><br>
 <h3>{{#each category}}
   {{name}}
   {{/each}}
@@ -12,6 +13,6 @@
 {{!-- <h3>{{where}}</h3> --}}
 {{!-- <h3>{{description}}</h3> --}}
 <a href="inquiry/{{id}}">Inquiry Details</a>
-<br><br><br>
+<br><br>
 
 {{/each}}

@@ -1,9 +1,12 @@
+<br><br>
+
 <h3>All Inquiries</h3>
-<h3>***********************</h3>
+
 {{#each inquiriesFromDB}}
+  {{#if match}}
 
 <br><br><br>
-<h3>{{fullName}}</h3>
+<h3>{{clientName}}</h3>
 <h3>{{#each category}}
   {{name}}
   {{/each}}
@@ -12,7 +15,7 @@
 <h3>{{where}}</h3>
 <h3>{{description}}</h3>
 
-<a href="inquiry/{{id}}">Inquiry Details</a>
+<a href="inquiry/{{id}}/details">Inquiry Details</a>
 <br><br><br>
-
+  {{/if}}
 {{/each}}

@@ -12,10 +12,12 @@
 
   <body>
     
-    <nav>
+    <div id="nav">
+      <div id="title">{{title}}</div>
+        <div id="navbar">
 
       {{#if clientInSession}}
-        <h3>Welcome, {{clientInSession.firstName}}</h3>
+        {{!-- <h3>Welcome, {{clientInSession.firstName}}</h3> --}}
         <a href="/my-profile">My Profile</a>
         <a href="/my-inquiries">My Inquiries</a>
         <a href="/inquire">Make an Inquiry</a>
@@ -26,7 +28,7 @@
       {{/if}}
 
       {{#if proInSession}}
-        <h3>Welcome, {{proInSession.firstName}}</h3>
+        {{!-- <h3>Welcome, {{proInSession.firstName}}</h3> --}}
         <a href="/my-pro-file">My Profile</a>
         <a href="/dashboard">Dashboard</a>
 
@@ -35,16 +37,12 @@
         </form>
       {{/if}}
 
-    </nav>
-
-    <div class="container">
-      <div id="title">{{title}}</div>
-      {{{body}}}
+      </div>
     </div>
 
-
-
-
+    <div class="container">
+      {{{body}}}
+    </div>
 
     <script src="/javascripts/script.js"></script>
   </body>

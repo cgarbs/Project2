@@ -3,8 +3,8 @@
 <form action="/create-inquiry" method="POST">
 
   <label>
-    Your Full Name:
-    <input type="text" name="fullName" />
+    Inquiry by:
+    <input type="text" name="clientName" value="{{clientInSession.firstName}} {{clientInSession.lastName}}" readonly/>
   </label>
 
   <label>
@@ -31,6 +31,6 @@
   <input type="text" name="description" />
 </label>
 
-<button type="submit">Send Inquiry</button>
+<button type="submit">Send</button>
 
 </form>
