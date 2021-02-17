@@ -1,9 +1,12 @@
+<br>
+
 <h2>My Profile</h2>
 
 {{#if clientInSession}}
-    <h3>Welcome, {{clientInSession.firstName}}! </h3>
-    <h2>Username: {{clientInSession.username}}</h2>
-    <h2>Email: {{clientInSession.email}}</h2>
+<br>
+    <h4>Username: {{clientInSession.username}}</h4>
+    <h4>Name: {{clientInSession.firstName}} {{clientInSession.lastName}} </h4>
+    <h4>Email: {{clientInSession.email}}</h4>
 {{else}}
     <b>Please login to view profile.<b>
 {{/if}}

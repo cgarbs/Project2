@@ -5,11 +5,6 @@
         {{#if clientInSession}}
           <a href="/my-profile">My Profile</a>
           <a href="/my-inquiries">My Inquiries</a>
-          <a href="/inquire">Make an Inquiry</a>
-{{!-- 
-          <form action="/logout" method="POST">
-            <button type="submit">Logout</button>
-          </form> --}}
 
         {{else}}
           <h3>Are you a client?</h3>
@@ -24,13 +19,8 @@
       <div id="pro-account">
 
         {{#if proInSession}}
-          <h3>{{proInSession.username}}</h3>
           <a href="/my-pro-file">My Profile</a>
           <a href="/dashboard">Dashboard</a>
-{{!-- 
-          <form action="/logout" method="POST">
-            <button type="submit">Logout</button>
-          </form> --}}
 
         {{else}}
           <h3>Or are you a Pro?</h3>

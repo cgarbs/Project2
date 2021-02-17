@@ -1,4 +1,8 @@
+<br>
+
 <h2>Update Inquiry</h2>
+
+<div id="inquiry-update-form">
 
 <form action="/inquiry/{{inquiryToUpdate.id}}/update" method="POST">
 
@@ -10,10 +14,15 @@
     <input type="text" name="where" value="{{inquiryToUpdate.where}}">
 </label>
 
-<label> Description:
+{{!-- <label> Description:
     <input type="text" name="description" value="{{inquiryToUpdate.description}}">
-</label>
+</label> --}}
 
+ <label for="description">Description:
+    <textarea name="description" id="description-input" cols="30" rows="4">
+    </textarea>
+  </label>
 
+</div>
 
 <button type='submit'>Update</button>

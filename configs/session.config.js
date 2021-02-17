@@ -11,7 +11,7 @@ module.exports = (app) => {
       resave: true,
       saveUninitialized: false,
       cookie: {
-        maxAge: 600000 // (10 Minute)
+        maxAge: 6000000 // (10 Minute)
       },
       store: new MongoStore({
         mongooseConnection: mongoose.connection,

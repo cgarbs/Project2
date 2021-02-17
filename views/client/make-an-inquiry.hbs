@@ -1,4 +1,8 @@
+<br>
+
 <h1>Make an Inquiry</h1>
+
+<div id="inquiry-form">
 
 <form action="/create-inquiry" method="POST">
 
@@ -15,6 +19,7 @@
         <option value="{{id}}">{{name}}</option>
       {{/each}}
     </select>
+  </label>
 
   <label>
     When:
@@ -26,11 +31,18 @@
     <input type="text" name="where" />
   </label>
 
-  <label>
+  {{!-- <label>
     Describe your event:
   <input type="text" name="description" />
-</label>
+</label> --}}
+
+  <label for="description">Describe your event:
+    <textarea name="description" id="description-input" cols="30" rows="4">
+    </textarea>
+  </label>
 
 <button type="submit">Send</button>
 
 </form>
+
+</div>

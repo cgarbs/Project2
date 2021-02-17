@@ -1,0 +1,21 @@
+<br>
+
+<h3>Edit Profile</h3>
+
+<h5>{{profileToUpdate.username}}</h5>
+
+<form action="/edit/{{profileToUpdate._id}}/update" enctype="multipart/form-data" method="POST">
+
+<label> First Name:
+    <input type="text" name="firstName" value="{{profileToUpdate.firstName}}">
+</label>
+
+<label> Last Name:
+    <input type="text" name="lastName" value="{{profileToUpdate.lastName}}">
+</label>
+
+<label> Profile Picture:
+    <input type="file" name="profilePicture" value="{{profileToUpdate.profilePicture}}">
+</label>
+
+<button type='submit'>Update</button>

@@ -1,28 +1,21 @@
-<h3>Requesting: 
-    {{#each inquiryFromDB.category}}
-        {{name}}
-    {{/each}}
-</h3>
+<br>
 
-<h3>By: {{inquiryFromDB.clientName}}</h3>
-
-<h3>When: {{inquiryFromDB.when}}</h3>
-
-<h3>Where: {{inquiryFromDB.where}}</h3>
-
-<h3>Description: {{inquiryFromDB.description}}</h3>
+<h3>Client: {{inquiryFromDB.clientName}}</h3>
 
 <br>
 
-<button><a href="/inquiry/{{inquiryFromDB.id}}/edit">Edit</a></button>
+<h4>Requesting: 
+    {{#each inquiryFromDB.category}}
+        {{name}}
+    {{/each}}
+</h4>
 
-<br><br><br>
+<h4>When: {{inquiryFromDB.when}}</h4>
 
-<form action="/inquiry/{{inquiryFromDB.id}}/delete" method="POST">
-   <button type="submit">Delete</button>
-</form>
+<h4>Where: {{inquiryFromDB.where}}</h4>
 
-<br><br><br>
+<h4>Description: {{inquiryFromDB.description}}</h4>
 
+<br>
 
-<a href="/my-inquiries">Back</a>
+<a href="/inquiries">Back</a>

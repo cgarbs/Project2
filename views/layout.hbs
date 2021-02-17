@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{title}}</title>
+    {{!-- <link rel="shortcut icon" type="image/jpg" href="./public/images/LOGO.jpg"/> --}}
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
@@ -13,31 +14,44 @@
   <body>
     
     <div id="nav">
-      <div id="title">{{title}}</div>
-        <div id="navbar">
+      <div id="title"><a href="/">{{title}}</a>
+        <div class="logo-img"></div>
+      </div>
+
+
 
       {{#if clientInSession}}
+              <div class="navbar">
         {{!-- <h3>Welcome, {{clientInSession.firstName}}</h3> --}}
-        <a href="/my-profile">My Profile</a>
         <a href="/my-inquiries">My Inquiries</a>
         <a href="/inquire">Make an Inquiry</a>
+        </div>
 
-        <form action="/logout" method="POST">
-          <button type="submit">Logout</button>
-        </form>
+        <div class="account-options">
+          <a href="/my-profile">My Profile</a>
+          <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+          </form>
+        </div>
       {{/if}}
+
 
       {{#if proInSession}}
+              <div class="navbar">
         {{!-- <h3>Welcome, {{proInSession.firstName}}</h3> --}}
-        <a href="/my-pro-file">My Profile</a>
+        
         <a href="/dashboard">Dashboard</a>
-
-        <form action="/logout" method="POST">
-          <button type="submit">Logout</button>
-        </form>
+        <a href="/my-portfolio">My Portfolio</a>
+        </div>
+        
+        <div class="account-options">
+          <a href="/my-pro-file">My Profile</a>
+          <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+          </form>
+        </div>
       {{/if}}
 
-      </div>
     </div>
 
     <div class="container">

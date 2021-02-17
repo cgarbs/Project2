@@ -4,6 +4,7 @@ const router = express.Router();
 const Job = require('../models/Job.model');
 const Inquiry = require('../models/Inquiry.model');
 const Pro = require("../models/Pro.model");
+const fileUploader = require('../configs/cloudinary.config');
 
 
 // Display pro dashboard
@@ -31,6 +32,29 @@ router.get('/my-pro-file', (req, res, next) => {
   })
     .catch(err => console.log(`Error occurred while rendering profile details: ${err}.`))
 });
+
+// Edit Pro-File
+router.get('/edit/:id/profile', (req, res, next) => {
+  if(!req.session.currentPro) {
+    res.redirect('/pro-login')
+  }
+  Pro.findById(req.session.currentPro._id)
+  .then(profileToUpdate => {
+    console.log(profileToUpdate);
+    res.render('professional/edit-pro-file', { profileToUpdate })
+  })
+  .catch(err => console.log(`Error occurred while retrieving update form: ${err}. `))
+});
+
+router.post('/edit/:id/update', fileUploader.single('profilePicture'), (req, res, next) => {
+  console.log(req.file);
+  const { firstName, lastName } = req.body;
+  Pro.findByIdAndUpdate(req.params.id, { firstName, lastName, profilePicture: req.file.path }, {new: true})
+  .then(() => {
+      console.log(req.file.path)
+      res.redirect(`/my-pro-file`)})
+      .catch(err => `Error occured while updating profile: ${err}`)
+  });
 
 
 // Display inquiries

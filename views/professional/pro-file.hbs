@@ -1,12 +1,17 @@
-<h3>{{proInSession.username}}'s profile</h3>
 <br>
-<h3>Name: {{proInSession.firstName}} {{proInSession.lastName}}</h3>
-<h3>Email: {{proInSession.email}}</h3>
-<h3>Occupation: 
+
+<h3>{{proInSession.username}}'s Profile</h3>
+<br>
+<h5>Name: {{proInSession.firstName}} {{proInSession.lastName}}</h>
+<h5>Email: {{proInSession.email}}</h5>
+<h5>Occupation: 
   {{#each profileFromDB.occupation}}
     {{name}}
   {{/each}}
-</h3>
+</h5>
 
+<h5>Profile Picture: {{proInSession.profilePicture}}</h5>
 
+<br>
 
+<a href="/edit/:id/profile">Edit Profile</a>

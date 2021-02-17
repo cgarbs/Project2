@@ -8,7 +8,6 @@ body {
   max-height: 100%;
   background-color: #dfdfdf;
   background-size: cover;
-  /* background-image: url("/images/indeximg3.jpg"); */
 }
 
 .container {
@@ -16,8 +15,9 @@ body {
   background: transparent;
 }
 
+/* Various Details */
 button {
-  width: 60px;
+  width: 70px;
   height: 30px;
   border-radius: 10px;
   border-style: none;
@@ -31,22 +31,49 @@ button {
   margin: 5px 15px 5px 15px;
 }
 
+#title a {
+  color: black;
+}
+
+#title a:hover {
+  text-decoration: none;
+}
+
 a {
   color: #00B7FF;
 }
 
+/* NAVIGATION */
 #nav {
   max-width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border-style:groove;
   border-radius: 12px;
   background: rgb(255, 255, 255, .9);
 }
 
-#navbar {
+.navbar {
   display: flex;
-  width: 100%;
+  width: 300px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: -775px;
+}
+
+.logo-img {
+  display: flex;
+  align-self: center;
+  width:25px;
+  height: 25px;
+  max-width: 100%;
+  background-image: url("/images/LOGO.jpg");
+  background-size: 100%;
+}
+
+.account-options {
+  width: 225px;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -102,7 +129,7 @@ a {
   width: 65px;
 }
 
-
+/* PRO ROUTES */
 .dashboard {
   width: 180px;
   display: flex;
@@ -110,3 +137,31 @@ a {
   align-items: center;
 }
 
+/* CLIENT ROUTES */
+#inquiry-form form {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#client-side-inquiry-details {
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#client-side-inquiry-details button a {
+  color: white;
+}
+
+#inquiry-update-form {
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
