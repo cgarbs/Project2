@@ -40,18 +40,15 @@ router.get('/edit/:id/profile', (req, res, next) => {
   }
   Pro.findById(req.session.currentPro._id)
   .then(profileToUpdate => {
-    console.log(profileToUpdate);
     res.render('professional/edit-pro-file', { profileToUpdate })
   })
   .catch(err => console.log(`Error occurred while retrieving update form: ${err}. `))
 });
 
 router.post('/edit/:id/update', fileUploader.single('profilePicture'), (req, res, next) => {
-  console.log(req.file);
   const { firstName, lastName } = req.body;
   Pro.findByIdAndUpdate(req.params.id, { firstName, lastName, profilePicture: req.file.path }, {new: true})
   .then(() => {
-      console.log(req.file.path)
       res.redirect(`/my-pro-file`)})
       .catch(err => `Error occured while updating profile: ${err}`)
   });
@@ -89,6 +86,46 @@ router.get('/inquiry/:id/details', (req, res, next) => {
     res.render('professional/inquiry-details.hbs', { inquiryFromDB }))
     .catch(err => console.log(`Error occurred while rendering inquiry details: ${err}.`))
 });
+
+ 
+router.get('/my-portfoilio', (req, res, next) => {
+  if(!req.session.currentPro) {
+    res.redirect('/pro-login')
+  }
+  Pro.findById(req.session.currentPro._id)
+  .then(inquiryFromDB =>
+    res.render('professional/inquiry-details.hbs', { inquiryFromDB }))
+    .catch(err => console.log(`Error occurred while rendering inquiry details: ${err}.`))
+});
+
+// Inquiry Response
+router.get('/response-sent', (req, res, next) => {
+  if(!req.session.currentPro) {
+    res.redirect('/pro-login')
+  }
+    res.render('professional/inquiry-response.hbs')
+});
+
+// Display portfolio
+router.get('/my-portfolio', (req, res, next) => {
+  if(!req.session.currentPro) {
+    res.redirect('/pro-login')
+  }
+  Pro.findById(req.session.currentPro._id)
+  .populate('portfolio')
+  .then(profileFromDB => {
+    res.render('professional/portfolio.hbs', { profileFromDB })
+  })
+    .catch(err => console.log(`Error occurred while rendering portfolio details: ${err}.`))
+});
+
+// router.post('/portfolio/:id', fileUploader.single('profilePicture'), (req, res, next) => {
+//   Pro.findByIdAndUpdate(req.params.id, { portfolio: req.file.path }, {new: true})
+//   .then(profileFromDB => {
+//     profileFromDB.portfolio.push(req.file.path);
+//       res.redirect(`/my-portfolio`)})
+//       .catch(err => `Error occured while updating portfolio: ${err}`)
+//   });
 
 
 module.exports = router;

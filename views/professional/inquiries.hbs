@@ -4,10 +4,12 @@
 
 <h3>All Inquiries</h3>
 
+<hr>
+
 {{#each inquiriesFromDB}}
   {{#if match}}
 
-<br><br><br>
+<br>
 <h3>{{clientName}}</h3>
 <h3>{{#each category}}
   {{name}}
@@ -15,13 +17,18 @@
 </h3>
 <h3>{{when}}</h3>
 <h3>{{where}}</h3>
-<h3>{{description}}</h3>
 
 <a href="inquiry/{{id}}/details">Inquiry Details</a>
-<br><br><br>
+
+<br><br>
+<hr>
+
   {{/if}}
+
 {{/each}}
 
 </div>
 
-{{!-- <div id="inquiry-details"></div> --}}
+<div id="details">
+  
+</div>

@@ -34,9 +34,7 @@ const proSchema = new Schema(
     profilePicture: {
       type: String
     },
-    portfolio: {
-      type: String
-    },
+    portfolio: [{ type: String }],
     occupation: [{ type: Schema.Types. ObjectId, ref: "Job" }]
   },
   {

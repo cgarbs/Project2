@@ -1,16 +1,19 @@
 <br>
 
-<h3>{{proInSession.username}}'s Profile</h3>
+<h3>{{profileFromDB.username}}'s Profile</h3>
 <br>
-<h5>Name: {{proInSession.firstName}} {{proInSession.lastName}}</h>
-<h5>Email: {{proInSession.email}}</h5>
+<h5>Name: {{profileFromDB.firstName}} {{profileFromDB.lastName}}</h>
+<h5>Email: {{profileFromDB.email}}</h5>
 <h5>Occupation: 
   {{#each profileFromDB.occupation}}
     {{name}}
   {{/each}}
 </h5>
 
-<h5>Profile Picture: {{proInSession.profilePicture}}</h5>
+<h5>Profile Picture:</h5>
+<div class="profile-picture">
+  <img src="{{profileFromDB.profilePicture}}" width="300px;" alt="{{profileFromDB.firstName}}">
+</div>
 
 <br>
 

@@ -1,0 +1,19 @@
+<br>
+
+<h2>My Portfolio</h2>
+
+<br>
+
+<div id="portfolio">
+
+{{profileFromDB.username}}
+
+<form action="/portfolio/{{profileFromDB._id}}" enctype="multipart/form-data" method="POST">
+
+<label> Profile Picture:
+    <input type="file" name="profilePicture" value="{{profileFromDB.portfolio}}">
+</label>
+
+<button type='submit'>Add</button>
+
+</div>

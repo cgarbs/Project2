@@ -1,9 +1,14 @@
-<div class="auth-forms"></div>
+<br>
+
 <h2>Pro Sign up</h2>
 
 <a href="/">Back</a>
+<a href="/pro-login">Login</a>
 
 <br><br>
+
+<div class="auth-forms">
+
   <form action="/pro-signup" method="POST">
 
       <label> Username:
@@ -34,6 +39,8 @@
           <option value="{{id}}">{{name}}</option>
         {{/each}}
       </select>
+
+      <br><br>
 
       <button type="submit">Signup</button>
 

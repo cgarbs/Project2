@@ -2,7 +2,11 @@
 
 <h3>Edit Profile</h3>
 
-<h5>{{profileToUpdate.username}}</h5>
+<div id="edit-profile">
+
+<h4>{{profileToUpdate.username}}</h4>
+
+<br>
 
 <form action="/edit/{{profileToUpdate._id}}/update" enctype="multipart/form-data" method="POST">
 
@@ -19,3 +23,5 @@
 </label>
 
 <button type='submit'>Update</button>
+
+</div>

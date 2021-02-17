@@ -1,18 +1,25 @@
-<br><br><br>
-
-<div class="auth-forms">
+<br>
 
 <h2>Client Login</h2>
 
+<a href="/">Back</a>
+<a href="/client-signup">Signup</a>
+
 <br><br>
+
+<div class="auth-forms">
+
 <form action="/client-login" method="POST">
 
     <label> Email:
         <input type="email" name="email">
     </label>
+
     <label> Password:
         <input type="password" name="userPassword">
     </label>
+
+<br>
 
     <button type="submit">Login</button>
 
@@ -22,7 +29,3 @@
     {{/if}}
 </form>
 </div>
-
-<br>
-
-<a href="/">Back</a>
